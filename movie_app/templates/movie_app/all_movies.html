@@ -7,6 +7,11 @@
 {% block content %}
 <h2>Список всех фильмов</h2>
 <ul>
+    <!--<ul>-->
+<!--    {% for movie in movies %}-->
+<!--    <li><a href="{% url 'movie-detail' movie.id %}">{{movie.name}}</a></li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
     {% for movie in movies %}
     <li><a href="{{ movie.get_url }}">{{movie.name}}</a></li>
     {% endfor %}
@@ -19,8 +24,3 @@
 
 {% endblock%}
 
-<!--<ul>-->
-<!--    {% for movie in movies %}-->
-<!--    <li><a href="{% url 'movie-detail' movie.id %}">{{movie.name}}</a></li>-->
-<!--    {% endfor %}-->
-<!--</ul>-->

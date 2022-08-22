@@ -42,3 +42,17 @@ class Movie(models.Model):
 
     def get_url(self):
         return reverse('movie-detail', args=[self.slug])
+
+class Actor(models.Model):
+    MALE = 'M'
+    FEMALE = "F"
+    GENDERS = [(MALE, 'мужчина'), (FEMALE, 'женщина')]
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    gender = models.CharField(max_length=1, choices=GENDERS, default=MALE)
+
+    def __str__(self):
+        if self.gender == self.MALE:
+            return f'Актер {self.first_name} {self.last_name}'
+        else:
+            return f'Актриса {self.first_name} {self.last_name}'
