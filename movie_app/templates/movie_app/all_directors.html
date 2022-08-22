@@ -1,0 +1,25 @@
+{% extends 'movie_app/base.html' %}
+
+{% block title %}
+Список всех режиссеров
+{% endblock %}
+
+{% block content %}
+<h2>Список всех режиссеров</h2>
+<ul>
+    {% for director in dir %}
+    <li><a href="{{ director.get_url }}"> {{director.first_name}} {{director.last_name}}</a></li>
+    {% endfor %}
+</ul>
+<!--<h3>Средний бюджет - {{ agg.budget__avg }}  </h3>-->
+<!--<h3>Минимальный рейтинг - {{ agg.rating__min }}  </h3>-->
+<!--<h3>Максимальный рейтинг - {{ agg.rating__max }}  </h3>-->
+<!--<h3>Всего фильмов - {{ agg.id__count  }}  </h3>-->
+
+{% endblock%}
+
+<!--<ul>-->
+<!--    {% for movie in movies %}-->
+<!--    <li><a href="{% url 'movie-detail' movie.id %}">{{movie.name}}</a></li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
